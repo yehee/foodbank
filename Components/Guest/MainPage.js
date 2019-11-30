@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import * as Permissions from 'expo-permissions';
-import * as Location from 'expo-location';
-import { locations } from '../../data/locations';
+// import * as Permissions from 'expo-permissions';
+// import * as Location from 'expo-location';
 
 const latitudeDelta = longitudeDelta = 20;
 export default class MapScreen extends Component {
@@ -25,29 +24,6 @@ export default class MapScreen extends Component {
       markers: locations
     };
   }
-
-  componentDidMount() {
-    this._getLocationAsync();
-  }
-
-  _getLocationAsync = async () => {
-    const { status } = await Permissions.askAsync(Permissions.LOCATION);
-
-    if (status === 'granted') {
-      const location = await Location.getCurrentPositionAsync({});
-
-      this.setState({
-        region: {
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
-          // latitudeDelta: 0.0922,
-          // longitudeDelta: 0.0421,
-          latitudeDelta,
-          longitudeDelta,
-        },
-      });
-    }
-  };
 
   onRegionChange(region) {
     this.setState({ region });
