@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { Icon, ListItem } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -7,7 +7,7 @@ export default class DashboardScreen extends Component {
     static navigationOptions = {
         title: 'Dashboard',
         headerStyle: {
-            backgroundColor: '#F87A00',
+            // backgroundColor: '#F87A00',
             borderBottomWidth: 0,
         },
     };
@@ -98,7 +98,7 @@ export default class DashboardScreen extends Component {
                     </View>
                 </View>
 
-                <Text style={{ textTransform: 'uppercase' }}>Local Food Bank Near You</Text>
+                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Local Food Bank Near You</Text>
                 <View>
                     {
                         list.map((l, i) => (
@@ -115,15 +115,30 @@ export default class DashboardScreen extends Component {
                         ))
                     }
                 </View>
-                <Text style={{ textTransform: 'uppercase' }}>Inventory Summary</Text>
+
+                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Top 3 Urgent Needs</Text>
                 <View
                     style={{
-                        flexDirection: 'row'
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginTop: 10,
                     }}
                 >
-                    {/* <Icon name='truck' type='font-awesome' />
-                    <Icon name='child' type='font-awesome' />
-                    <Icon name='bed' type='font-awesome' /> */}
+                    <View>
+                        <Image source={require('../../assets/canned-fruit.png')} style={{ marginHorizontal: 30, width: 50, height: 50 }} />
+                        <Text style={{ textAlign: 'center', marginTop: 10 }}>Canned Fruit</Text>
+                    </View>
+                    <View>
+                        <Image source={require('../../assets/baby-formula.png')} style={{ marginHorizontal: 30, width: 50, height: 50 }} />
+                        <Text style={{ textAlign: 'center', marginTop: 10 }}>Baby Formula</Text>
+                    </View>
+                    <View>
+                        <Image source={require('../../assets/canned-protein.png')} style={{ marginHorizontal: 30, width: 50, height: 50 }} />
+                        <Text style={{ textAlign: 'center', marginTop: 10 }}>Canned Protein</Text>
+                    </View>
+
+
                 </View>
             </ScrollView>
         );
