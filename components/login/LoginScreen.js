@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, View, TextInput } from 'react-native';
-import { Input, Icon } from 'react-native-elements';
+import { View } from 'react-native';
+import { Input, Icon, Button } from 'react-native-elements';
 
 export default class LoginScreen extends Component {
     static navigationOptions = {
@@ -32,16 +32,45 @@ export default class LoginScreen extends Component {
                     placeholder='Username'
                     onChangeText={text => onChangeText(text, 'username')}
                     leftIcon={<Icon name='user' type='feather' />}
-                    value={username} />
+                    value={username}
+                    inputContainerStyle={{
+                        borderColor: 'black',
+                        borderWidth: 1,
+                        borderRadius: 50,
+                        padding: 5,
+                        marginVertical: 10,
+                        marginHorizontal: 5,
+                    }}
+                />
                 <Input
                     placeholder='Password'
                     secureTextEntry={true}
                     onChangeText={text => onChangeText(text, 'password')}
                     leftIcon={<Icon name='lock' />}
-                    value={password} />
+                    value={password}
+                    inputContainerStyle={{
+                        borderColor: 'black',
+                        borderWidth: 1,
+                        borderRadius: 50,
+                        padding: 5,
+                        marginVertical: 10,
+                        marginHorizontal: 5,
+                    }}
+                />
                 <Button
-                    title="Login"
+                    title="Sign In"
                     onPress={() => navigate('Home')}
+                    buttonStyle={{
+                        backgroundColor: 'red',
+                        borderRadius: 50,
+                        padding: 5,
+                        paddingVertical: 12.5,
+                        marginVertical: 10,
+                        marginHorizontal: 15,
+                    }}
+                    titleStyle={{
+                        textTransform: 'uppercase',
+                    }}
                 />
             </View>
         );
