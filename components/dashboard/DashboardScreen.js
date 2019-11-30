@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default class DashboardScreen extends Component {
     static navigationOptions = {
@@ -12,7 +12,7 @@ export default class DashboardScreen extends Component {
         const { navigate } = this.props.navigation;
         return (
             <View>
-                <p>Dashboard Screen</p>
+                <Text>Dashboard Screen</Text>
             </View>
         );
     }
