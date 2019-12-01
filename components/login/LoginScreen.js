@@ -27,14 +27,14 @@ export default class LoginScreen extends Component {
         return (
             <View
                 style={{
-                    backgroundColor: '#36353A',
+                    // backgroundColor: '#36353A',
                     height: '100%',
-                    // alignItems: 'center',
-                    // justifyContent: 'center',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
             >
                 <Input
-                    autoFocus
+                    // autoFocus
                     autoCapitalize='none'
                     placeholder='Username'
                     onChangeText={text => onChangeText(text, 'username')}
@@ -66,7 +66,7 @@ export default class LoginScreen extends Component {
                 />
                 <Button
                     title="Sign In"
-                    onPress={() => navigate('Home')}
+                    onPress={() => navigate('Dashboard')}
                     buttonStyle={{
                         backgroundColor: 'red',
                         borderRadius: 50,
@@ -74,6 +74,7 @@ export default class LoginScreen extends Component {
                         paddingVertical: 12.5,
                         marginVertical: 10,
                         marginHorizontal: 15,
+                        width: 350
                     }}
                     titleStyle={{
                         textTransform: 'uppercase',
