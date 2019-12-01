@@ -7,7 +7,6 @@ export default class DashboardScreen extends Component {
     static navigationOptions = {
         title: 'Dashboard',
         headerStyle: {
-            // backgroundColor: '#F87A00',
             borderBottomWidth: 0,
         },
     };
@@ -46,13 +45,10 @@ export default class DashboardScreen extends Component {
     }
 
     render() {
-        const { navigate } = this.props.navigation;
-        const { list } = this.state;
         return (
             <ScrollView>
                 <View
                     style={{
-                        // backgroundColor: '#F87A00',
                         height: 200,
                     }}
                 >
@@ -73,7 +69,7 @@ export default class DashboardScreen extends Component {
                             justifyContent: 'center',
                         }}
                     >
-                        <Icon name='map-pin' type='font-awesome' size={14} />
+                        <Icon name='map-marker' type='font-awesome' size={14} />
                         <Text style={{ textAlign: 'center', marginLeft: 5, }}>Vancouver, BC</Text>
                     </View>
                     <View
@@ -98,22 +94,58 @@ export default class DashboardScreen extends Component {
                     </View>
                 </View>
 
-                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Local Food Bank Near You</Text>
-                <View>
-                    {
-                        list.map((l, i) => (
-                            <ListItem
-                                key={i}
-                                leftAvatar={{ source: l.avatar_url }}
-                                title={l.name}
-                                subtitle={l.subtitle}
-                                subtitleStyle={{
-                                    fontSize: 12,
-                                    color: '#666'
-                                }}
+                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Your Local Food Bank</Text>
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        marginHorizontal: 50,
+                    }}
+                >
+                    <Image
+                        source={require('./assets/logo-greater-vancouver-food-bank.png')}
+                        style={{
+                            height: 100,
+                            width: 100,
+                            resizeMode: 'contain',
+                            display: 'flex',
+                            alignSelf: 'center',
+                        }}
+                    />
+                    <View
+                        style={{
+                            marginLeft: 25,
+                        }}
+                    >
+                        <View
+                            style={{
+                                flexDirection: 'row',
+                                marginTop: 30
+                            }}
+                        >
+                            <Icon
+                                name='phone'
+                                type='font-awesome'
+                                size={14}
+                                accessibilityLabel={'Contact information'}
+                                accessible
                             />
-                        ))
-                    }
+                            <Text style={{ marginLeft: 5, }}>604-876-3601</Text>
+                        </View>
+                        <View
+                            style={{
+                                flexDirection: 'row',
+                            }}
+                        >
+                            <Icon
+                                name='map-marker'
+                                type='font-awesome'
+                                size={14}
+                                accessibilityLabel={'Location'}
+                                accessible
+                            />
+                            <Text style={{ marginLeft: 5, }}>1150 Raymur Ave, Vancouver</Text>
+                        </View>
+                    </View>
                 </View>
 
                 <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Top 3 Urgent Needs</Text>
@@ -126,19 +158,32 @@ export default class DashboardScreen extends Component {
                     }}
                 >
                     <View>
-                        <Image source={require('../../assets/canned-fruit.png')} style={{ marginHorizontal: 30, width: 50, height: 50 }} />
+                        <Image
+                            source={require('../../assets/canned-fruit.png')}
+                            style={{ marginHorizontal: 30, width: 50, height: 50 }}
+                            accessibilityLabel={'Canned Fruit'}
+                            accessible
+                        />
                         <Text style={{ textAlign: 'center', marginTop: 10 }}>Canned Fruit</Text>
                     </View>
                     <View>
-                        <Image source={require('../../assets/baby-formula.png')} style={{ marginHorizontal: 30, width: 50, height: 50 }} />
+                        <Image
+                            source={require('../../assets/baby-formula.png')}
+                            style={{ marginHorizontal: 30, width: 50, height: 50 }}
+                            accessibilityLabel={'Baby Formula'}
+                            accessible
+                        />
                         <Text style={{ textAlign: 'center', marginTop: 10 }}>Baby Formula</Text>
                     </View>
                     <View>
-                        <Image source={require('../../assets/canned-protein.png')} style={{ marginHorizontal: 30, width: 50, height: 50 }} />
+                        <Image
+                            source={require('../../assets/canned-protein.png')}
+                            style={{ marginHorizontal: 30, width: 50, height: 50 }}
+                            accessibilityLabel={'Canned Protein'}
+                            accessible
+                        />
                         <Text style={{ textAlign: 'center', marginTop: 10 }}>Canned Protein</Text>
                     </View>
-
-
                 </View>
             </ScrollView>
         );

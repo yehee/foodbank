@@ -25,7 +25,14 @@ export default class LoginScreen extends Component {
         const { navigate } = this.props.navigation;
         const { username, password } = this.state;
         return (
-            <View>
+            <View
+                style={{
+                    backgroundColor: '#36353A',
+                    height: '100%',
+                    // alignItems: 'center',
+                    // justifyContent: 'center',
+                }}
+            >
                 <Input
                     autoFocus
                     autoCapitalize='none'
@@ -70,6 +77,7 @@ export default class LoginScreen extends Component {
                     }}
                     titleStyle={{
                         textTransform: 'uppercase',
+                        fontWeight: 'bold',
                     }}
                 />
             </View>
