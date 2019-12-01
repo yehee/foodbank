@@ -64,7 +64,7 @@ export default class DashboardScreen extends Component {
                     </View>
                 </View>
 
-                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Your Local Food Bank</Text>
+                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15, color: '#008391', fontSize: 16 }}>Your Local Food Bank</Text>
                 <View
                     style={{
                         flexDirection: 'row',
@@ -145,7 +145,7 @@ export default class DashboardScreen extends Component {
                     })}
                 />
 
-                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15, marginTop: 20 }}>Top 3 Urgent Needs</Text>
+                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15, marginTop: 20, marginBottom: 15, color: '#008391', fontSize: 16 }}>Top 3 Urgent Needs</Text>
                 <View
                     style={{
                         flexDirection: 'row',

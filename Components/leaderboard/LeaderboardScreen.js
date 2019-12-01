@@ -82,7 +82,7 @@ export default class LeaderboardScreen extends Component {
 
                     <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15, marginTop: 20 }}>Your score</Text>
                     <ListItem
-                        leftAvatar={{ source: { uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' } }}
+                        leftAvatar={{ source: { uri: 'https://ibb.co/MRvKTRK' } }}
                         title={'Jane Doe'}
                         subtitle={'Project Manager'}
                         rightElement={
