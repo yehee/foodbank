@@ -39,8 +39,7 @@ export default class ProfilePage extends Component {
                     <Image style={{ ...styles.logo, width: 175, resizeMode: 'contain', height: 100 }} source={require('../../assets/FoodBank_Transparent_Blue.Logo.png')} />
                 </View>
                 <View style={styles.buttonView}>
-
-                    <Button style={styles.button} title='Change My Location' />
+                    <Button style={styles.button} title='Change My Location' onPress={() => navigate('GuestPage')} />
                 </View>
                 <View style={styles.view3}>
                     <Text style={styles.subTitles}>DONATION HISTORY</Text>
