@@ -9,6 +9,7 @@ export default class DashboardScreen extends Component {
         headerStyle: {
             borderBottomWidth: 0,
         },
+        header: null
     };
 
     constructor(props) {
@@ -27,6 +28,7 @@ export default class DashboardScreen extends Component {
                 <View
                     style={{
                         height: 200,
+                        marginTop: 50,
                     }}
                 >
                     <Icon

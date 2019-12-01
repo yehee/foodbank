@@ -6,8 +6,6 @@ export default class HomeScreen extends Component {
         title: 'Home',
     };
 
-    options = [];
-
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -20,10 +18,10 @@ export default class HomeScreen extends Component {
                     title="GuestPage"
                     onPress={() => navigate('GuestPage')}
                 />
-                 <Button
+                <Button
                     title="ProfilePage"
-                    onPress={() => navigate('ProfilePage')}
-                /> 
+                    onPress={() => navigate('Profile')}
+                />
                 <Button
                     title="Inventory"
                     onPress={() => navigate('Inventory')}

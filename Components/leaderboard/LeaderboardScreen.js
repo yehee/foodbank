@@ -6,6 +6,7 @@ import BottomNavigationTabs from '../bottomNavigationTabs/BottomNavigationTabs';
 export default class LeaderboardScreen extends Component {
     static navigationOptions = {
         title: 'Leaderboard',
+        header: null
     };
 
     constructor(props) {
@@ -35,13 +36,13 @@ export default class LeaderboardScreen extends Component {
         return (
             <View
                 style={{
-                    height: '100%'
+                    height: '100%',
                 }}
             >
                 <View
                     style={{
                         margin: 10,
-                        marginTop: 20,
+                        marginTop: 70,
                     }}>
                     <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Top Donors</Text>
                     {
