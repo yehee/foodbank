@@ -77,6 +77,7 @@ export default class MapScreen extends Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     const { region, markers } = this.state;
     return (
       <View>
