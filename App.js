@@ -11,12 +11,12 @@ import AchievementScreen from './components/achievements/AchievementScreen';
 import BottomNavigationTabs from './components/bottomNavigationTabs/BottomNavigationTabs';
 
 const MainNavigator = createStackNavigator({
+  Login: { screen: LoginScreen },
   Home: { screen: HomeScreen },
   Dashboard: { screen: DashboardScreen },
   GuestPage: { screen: MainPage },
-  ProfilePage: { screen: ProfilePage },
+  Profile: { screen: ProfilePage },
   Inventory: { screen: InventoryScreen },
-  Login: { screen: LoginScreen },
   Leaderboard: { screen: LeaderboardScreen },
   Achievements: { screen: AchievementScreen },
   BottomNavigationTabs: { screen: BottomNavigationTabs },
