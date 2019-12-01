@@ -1,27 +1,74 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+
 // import * as Permissions from 'expo-permissions';
 // import * as Location from 'expo-location';
 
-const latitudeDelta = longitudeDelta = 20;
+const latitudeDelta = longitudeDelta = 0.5;
 export default class MapScreen extends Component {
-    
   static navigationOptions = {
-    title: 'Find a Location'
+    title: 'Location',
+    headerStyle: {
+      backgroundColor: '#F87A00',
+      borderBottomWidth: 0,
+  }
   };
+
+  
 
   constructor(props) {
     super(props);
 
     this.state = {
       region: {
-        latitude: 37.78825,
-        longitude: -122.4324,
+        latitude: 49.262140,
+        longitude: -123.086770,
         latitudeDelta,
         longitudeDelta,
       },
-      markers: locations
+      markers: [
+        {
+            coordinates: {
+                latitude: 49.268510,
+                longitude: -123.249560,
+            },
+            title: 'AMS FoodBank',
+            description: 'EXTREME',
+        },
+        {
+            coordinates: {
+                latitude: 49.249561,
+                longitude: -122.922607,
+            },
+            title: 'Greater Vancouver FoodBank',
+            description: 'EXTREME',
+        },
+        {
+            coordinates: {
+                latitude: 49.285660,
+                longitude: -123.133700,
+            },
+            title: 'Gordon Neighborhood House',
+            description: 'MODERATE',
+        },
+        {
+            coordinates: {
+                latitude: 49.281510,
+                longitude: -123.092380,
+            },
+            title: 'Sheway',
+            description: 'MODERATE',
+        },
+        {
+            coordinates: {
+                latitude: 49.262140,
+                longitude: -123.086770,
+            },
+            title: 'Mount Pleasant Neighborhood House',
+            description: 'MODERATE',
+        }
+    ]
     };
   }
 
@@ -32,7 +79,10 @@ export default class MapScreen extends Component {
   render() {
     const { region, markers } = this.state;
     return (
-      <MapView
+      <View>
+        <Text style={styles.title}>PICK YOUR FOOD BANK</Text>
+<MapView
+        
         style={styles.map}
         region={region}
         showsUserLocation={true}
@@ -46,16 +96,37 @@ export default class MapScreen extends Component {
               coordinate={coordinates}
               title={title}
               description={description}
+              onPress={() => navigate('Inventory', {location: marker.coordinates})}
             // onPress={() => this._handleEvent(marker.id)}
             />);
         })}
       </MapView>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   map: {
+    
+    marginTop: 150,
+    padding: 0,
+    
     ...StyleSheet.absoluteFillObject,
+    width: 500,
+    height: 600,
   },
+  title: {
+    marginBottom: 150,
+    paddingTop: 60,
+    paddingBottom: 60,
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: 30,
+    backgroundColor: '#36353A',
+    color: '#F87A00',
+    textAlign: 'center',
+    justifyContent: 'center',
+  }
+
 });

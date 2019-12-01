@@ -16,6 +16,14 @@ export default class HomeScreen extends Component {
                     title="Dashboard"
                     onPress={() => navigate('Dashboard')}
                 />
+                <Button
+                    title="GuestPage"
+                    onPress={() => navigate('GuestPage')}
+                />
+                 <Button
+                    title="ProfilePage"
+                    onPress={() => navigate('ProfilePage')}
+                /> 
             </View>
         );
     }
