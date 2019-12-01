@@ -69,6 +69,24 @@ const styles = StyleSheet.create({
     },
   });
 
+const DEFAULT_FOODBANK = {
+    foodBank: {
+        name: "Greater Vancouver Food Bank Society",
+        address: "1150 RAYMUR AVE, Vancouver",
+        phone: "(604) 876-3601",
+        region: {
+            latitude: 49.249460,
+            longitude: -122.922036,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.015,
+        },
+        coordinates: {
+            latitude: 49.249460,
+            longitude: -122.922036,
+        }
+    }
+}
+
 export default class InventoryScreen extends Component {
     static navigationOptions = {
         title: 'Inventory',
@@ -83,13 +101,6 @@ export default class InventoryScreen extends Component {
                 { name: "Beans", count: 3, min: 15, category: "canned protein"},
                 { name: "Chicken", count: 5, min: 10, category: "canned protein"},
                 { name: "Cans", count: 40, min: 30, category: "baby formula"},
-                // { name: "Canned Beans", count: 20, min: 10, category: },
-                // { name: "Milk", count: 7, min: 6, category: },
-                // { name: "Diapers", count: 15, min: 60, category: },
-                // { name: "Canned Tuna", count: 15, min: 25, category: },
-                // { name: "Bread", count: 10, min: 7, category: },
-                // { name: "Bags of Potatoes", count: 30, min: 15, category: },
-                // { name: "Baby Food", count: 4, min: 3, category: }
             ],
             foodBank: {
                 name: "Greater Vancouver Food Bank Society",
@@ -111,7 +122,10 @@ export default class InventoryScreen extends Component {
 
     async componentDidMount() {
         const { navigation } = this.props;
-        const coodinates = navigation.getParam('coordinates', { longitude: 0, latitude: 0});
+        const foodBank = navigation.getParam('foodBank', DEFAULT_FOODBANK.foodBank);
+        this.setState({
+            foodBank: foodBank
+        })
     }
 
     render() {
