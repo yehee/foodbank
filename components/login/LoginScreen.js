@@ -34,7 +34,7 @@ export default class LoginScreen extends Component {
                 }}
             >
                 <Image
-                    source={require('../../assets/logo-foodbank.png')}
+                    source={require('../../assets/splash-foodbank-logo.png')}
                     style={{
                         // width: 100,
                         height: 150,
