@@ -152,12 +152,19 @@ export default class InventoryScreen extends Component {
                         // description={description}
                     />
                 </MapView>
-                <Text style={styles.subtitle}>INVENTORY</Text>
+                <Text 
+                    style={styles.subtitle}
+                    accessibilityLabel={"Inventory Available"}
+                    accessible
+                >
+                    INVENTORY
+                </Text>
                 <View style={styles.listItem}>
                     <View style={styles.image}>
                         <Image
-                            style={styles.image}
                             source={require('../../assets/canned-protein.png')}
+                            accessibilityLabel={"Canned Protein"}
+                            accessible
                         />
                     </View>
                     <View styles={styles.inventoryDetails}>
@@ -173,6 +180,8 @@ export default class InventoryScreen extends Component {
                     <View style={styles.image}>
                         <Image
                             source={require('../../assets/baby-formula.png')}
+                            accessibilityLabel={"Baby Formula"}
+                            accessible
                         />
                     </View>
                     <View styles={styles.inventoryDetails}>
