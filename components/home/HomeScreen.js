@@ -20,6 +20,10 @@ export default class HomeScreen extends Component {
                     title="Inventory"
                     onPress={() => navigate('Inventory')}
                 />
+                <Button
+                    title="Login"
+                    onPress={() => navigate('Login')}
+                />
             </View>
         );
     }
