@@ -109,6 +109,11 @@ export default class InventoryScreen extends Component {
         };
     }
 
+    async componentDidMount() {
+        const { navigation } = this.props;
+        const coodinates = navigation.getParam('coordinates', { longitude: 0, latitude: 0});
+    }
+
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -145,7 +150,7 @@ export default class InventoryScreen extends Component {
                         <Text style={styles.label}>Canned Protein</Text>
                         {   
                             this.state.inventory.filter(item => item.category == "canned protein").map((item) => {
-                                return <Text style={styles.inventoryItem}>{item.name + ": " + item.count + "/" + item.min}</Text>
+                                return <Text key={item.name} style={styles.inventoryItem}>{item.name + ": " + item.count + "/" + item.min}</Text>
                             })
                         }
                     </View>
@@ -160,7 +165,7 @@ export default class InventoryScreen extends Component {
                         <Text style={styles.label}>Baby Formula</Text>
                         {
                             this.state.inventory.filter(item => item.category == "baby formula").map((item) => {
-                                return <Text style={styles.inventoryItem}>{item.name + ": " + item.count + "/" + item.min}</Text>
+                                return <Text key={item.name} style={styles.inventoryItem}>{item.name + ": " + item.count + "/" + item.min}</Text>
                             })
                         }
                     </View>
