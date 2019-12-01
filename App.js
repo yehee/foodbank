@@ -8,6 +8,7 @@ import InventoryScreen from './components/inventory/InventoryScreen';
 import LoginScreen from './components/login/LoginScreen';
 import LeaderboardScreen from './components/leaderboard/LeaderboardScreen';
 import AchievementScreen from './components/achievements/AchievementScreen';
+import BottomNavigationTabs from './components/bottomNavigationTabs/BottomNavigationTabs';
 
 const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
@@ -17,7 +18,8 @@ const MainNavigator = createStackNavigator({
   Inventory: { screen: InventoryScreen },
   Login: { screen: LoginScreen },
   Leaderboard: { screen: LeaderboardScreen },
-  Achievements: { screen: AchievementScreen }, 
+  Achievements: { screen: AchievementScreen },
+  BottomNavigationTabs: { screen: BottomNavigationTabs },
 });
 
 const App = createAppContainer(MainNavigator);

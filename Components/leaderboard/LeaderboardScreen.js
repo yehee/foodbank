@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements';
+import BottomNavigationTabs from '../bottomNavigationTabs/BottomNavigationTabs';
 
 export default class LeaderboardScreen extends Component {
     static navigationOptions = {
@@ -34,79 +35,101 @@ export default class LeaderboardScreen extends Component {
         return (
             <View
                 style={{
-                    margin: 10,
-                    marginTop: 20,
+                    height: '100%'
                 }}
             >
-                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Top Donors</Text>
-                {
-                    list.map((l, i) => (
-                        <ListItem
-                            key={i}
-                            leftAvatar={{ source: { uri: l.avatar_url } }}
-                            title={l.name}
-                            subtitle={l.subtitle}
-                            rightElement={
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    <Icon
-                                        name='star'
-                                        type='antdesign'
-                                        size={14}
-                                    />
-                                    <Text style={{ marginLeft: 5, }}>55</Text>
-                                </View>
-                            }
-                            containerStyle={{
-                                borderRadius: 5,
-                                backgroundColor: '#eee',
-                                margin: 5
-                            }}
-                            subtitleStyle={{
-                                fontSize: 12,
-                                color: '#888',
-                            }}
-                        />
-                    ))
-                }
-
-                <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15, marginTop: 20 }}>Your score</Text>
-                <ListItem
-                    leftAvatar={{ source: { uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' } }}
-                    title={'Jane Doe'}
-                    subtitle={'Project Manager'}
-                    rightElement={
-                        <View
-                            style={{
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <Icon
-                                name='star'
-                                type='antdesign'
-                                size={14}
+                <View
+                    style={{
+                        margin: 10,
+                        marginTop: 20,
+                    }}>
+                    <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15 }}>Top Donors</Text>
+                    {
+                        list.map((l, i) => (
+                            <ListItem
+                                key={i}
+                                leftAvatar={{ source: { uri: l.avatar_url } }}
+                                title={l.name}
+                                subtitle={l.subtitle}
+                                rightElement={
+                                    <View
+                                        style={{
+                                            flexDirection: 'row',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <Icon
+                                            name='star'
+                                            type='antdesign'
+                                            size={14}
+                                        />
+                                        <Text style={{ marginLeft: 5, }}>55</Text>
+                                    </View>
+                                }
+                                containerStyle={{
+                                    borderRadius: 5,
+                                    backgroundColor: '#eee',
+                                    margin: 5
+                                }}
+                                subtitleStyle={{
+                                    fontSize: 12,
+                                    color: '#888',
+                                }}
                             />
-                            <Text style={{ marginLeft: 5, }}>55</Text>
-                        </View>
+                        ))
                     }
-                    containerStyle={{
-                        borderRadius: 5,
-                        backgroundColor: '#eee',
-                        margin: 5
+
+                    <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 15, marginTop: 20 }}>Your score</Text>
+                    <ListItem
+                        leftAvatar={{ source: { uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' } }}
+                        title={'Jane Doe'}
+                        subtitle={'Project Manager'}
+                        rightElement={
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <Icon
+                                    name='star'
+                                    type='antdesign'
+                                    size={14}
+                                />
+                                <Text style={{ marginLeft: 5, }}>55</Text>
+                            </View>
+                        }
+                        containerStyle={{
+                            borderRadius: 5,
+                            backgroundColor: '#eee',
+                            margin: 5
+                        }}
+                        subtitleStyle={{
+                            fontSize: 12,
+                            color: '#888',
+                        }}
+                    />
+                    <Text style={{ textAlign: 'center', marginTop: 20 }}>140 up from last month!</Text>
+                </View>
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        position: 'absolute',
+                        bottom: 0,
+                        backgroundColor: 'coral',
+                        justifyContent: 'space-around',
+                        alignItems: 'center',
+                        width: '100%',
+                        padding: 10
+
                     }}
-                    subtitleStyle={{
-                        fontSize: 12,
-                        color: '#888',
-                    }}
-                />
-                <Text style={{ textAlign: 'center', marginTop: 20 }}>140 up from last month!</Text>
+                >
+                    <Icon name='home' type='material' onPress={() => navigate('Dashboard')} />
+                    <Icon name='price-ribbon' type='entypo' onPress={() => navigate('Leaderboard')} />
+                    <Icon name='user' type='feather' onPress={() => navigate('Profile')} />
+                </View>
             </View>
         );
     }
