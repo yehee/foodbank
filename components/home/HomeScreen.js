@@ -17,6 +17,7 @@ export default class HomeScreen extends Component {
                     onPress={() => navigate('Dashboard')}
                 />
                 <Button
+<<<<<<< HEAD
                     title="GuestPage"
                     onPress={() => navigate('GuestPage')}
                 />
@@ -24,6 +25,15 @@ export default class HomeScreen extends Component {
                     title="ProfilePage"
                     onPress={() => navigate('ProfilePage')}
                 /> 
+=======
+                    title="Inventory"
+                    onPress={() => navigate('Inventory')}
+                />
+                <Button
+                    title="Login"
+                    onPress={() => navigate('Login')}
+                />
+>>>>>>> 2ced090d308291d563a7ef1768a7dfa5aff25905
             </View>
         );
     }
