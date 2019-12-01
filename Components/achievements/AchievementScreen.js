@@ -11,30 +11,16 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       marginBottom: 10,
     },
-    subtitle: {
-      textTransform: 'uppercase',
-      fontSize: 18,
-      color: '#008391',
-      fontWeight: 'bold',
-      marginBottom: 10
-    },
-    info: {
-        fontSize: 18,
-        color: '#008391',
-        fontWeight: 'bold',
-        marginBottom: 10
-    },
-    image: {
+    content: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginBottom: 20
+        marginBottom: 20,
     },
     listItem: {
         flexWrap: 'wrap',
         marginBottom: 20,
         color: DEFAULT_FONT_COLOR,
         fontWeight: 'bold',
-        maxWidth: 110,
         textAlign: 'center'
     },
     container: {
@@ -42,11 +28,12 @@ const styles = StyleSheet.create({
       height: 50,
       paddingLeft: 30,
       paddingRight: 30,
-      paddingTop: 30
+      paddingTop: 30,
     },
     wrap: {
         flexWrap: 'wrap',
-        paddingRight: 13
+        paddingRight: 13,
+        width: "33%"
     }
   });
 
@@ -75,9 +62,9 @@ export default class AchievementScreen extends Component {
 
     render() {
         return (
-            <ScrollView style={styles.container}>
+            <View style={styles.container}>
                 <Text style={styles.fontTitle}>Achievements</Text>
-                <View style={styles.image}>
+                <View style={styles.content}>
                     {   
                         this.state.achievements.map((item) => {
                             return (
@@ -92,7 +79,7 @@ export default class AchievementScreen extends Component {
                         })
                     }
                 </View>
-            </ScrollView>
+            </View>
         );
     }
 }
