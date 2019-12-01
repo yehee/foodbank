@@ -129,6 +129,7 @@ export default class LeaderboardScreen extends Component {
                 >
                     <Icon name='home' type='material' onPress={() => navigate('Dashboard')} />
                     <Icon name='price-ribbon' type='entypo' onPress={() => navigate('Leaderboard')} />
+                    <Icon name='sheriff-badge' type='foundation' onPress={() => navigate('Achievements')} />
                     <Icon name='user' type='feather' onPress={() => navigate('Profile')} />
                 </View>
             </View>
