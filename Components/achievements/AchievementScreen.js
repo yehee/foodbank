@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         color: DEFAULT_FONT_COLOR,
         fontWeight: 'bold',
-        maxWidth: 110,
+        width: 91,
         textAlign: 'center'
     },
     container: {
