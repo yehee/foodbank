@@ -6,14 +6,16 @@ import MainPage from './components/Guest/MainPage';
 import ProfilePage from './components/profile/ProfilePage';
 import InventoryScreen from './components/inventory/InventoryScreen';
 import LoginScreen from './components/login/LoginScreen';
+import LeaderboardScreen from './components/leaderboard/LeaderboardScreen';
 
 const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
   Dashboard: { screen: DashboardScreen },
-  GuestPage: { screen: MainPage},
-  ProfilePage: { screen: ProfilePage},
+  GuestPage: { screen: MainPage },
+  ProfilePage: { screen: ProfilePage },
   Inventory: { screen: InventoryScreen },
   Login: { screen: LoginScreen },
+  Leaderboard: { screen: LeaderboardScreen },
 });
 
 const App = createAppContainer(MainNavigator);
